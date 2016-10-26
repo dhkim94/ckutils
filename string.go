@@ -46,13 +46,12 @@ var numberAlphabetAndSymbol []string = []string{
 //
 // [POST]
 //	 원하는 길이의 랜덤 스트링을 리턴 한다.
-func GetRandomString(length uint, charSet []string) (str string) {
+func GetRandomString(length int, charSet []string) (str string) {
 	rand.Seed(time.Now().UTC().UnixNano())
 
 	max := len(charSet) - 1
-	len2 := int(length)
-	
-	for i := 0; i < len2; i++ {
+
+	for i := 0; i < length; i++ {
 		str += charSet[GetRandomNumber(0, max)]
 	}
 
@@ -66,6 +65,6 @@ func GetRandomString(length uint, charSet []string) (str string) {
 //
 // [POST]
 //	랜덤 하게 생성한 스트링
-func GetRandomNumberAlphabetAndSymbolString(length uint) string {
+func GetRandomNumberAlphabetAndSymbolString(length int) string {
 	return GetRandomString(length, numberAlphabetAndSymbol)
 }
