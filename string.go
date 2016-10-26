@@ -50,7 +50,9 @@ func GetRandomString(length uint, charSet []string) (str string) {
 	rand.Seed(time.Now().UTC().UnixNano())
 
 	max := len(charSet) - 1
-	for i := 0; i < length; i++ {
+	len2 := int(length)
+	
+	for i := 0; i < len2; i++ {
 		str += charSet[GetRandomNumber(0, max)]
 	}
 
